@@ -1,5 +1,6 @@
 ﻿# Algorithm is tricky here, because if we would  create a programm in a "usual way", as we used to, we have to try creating lists and have multiple loops to iterate them. 
-# It uses outer loop to iterate over all the cats and a nested loop to determine the state of each cat after num_rounds rounds. If the state of a cat is 1, then its number (index + 1) is added to a list result. At the end, the result list contains the numbers of cats that will have hats on.
+# It uses outer loop to iterate over all the cats and a nested loop to determine the state of each cat after num_rounds rounds. If the state of a cat is 1, then its number (index + 1) is added to a list result. 
+# At the end, the result list contains the numbers of cats that will have hats on.
 
 
 Function_cats_with_hats_mk_1(num_cats, num_rounds):
