@@ -1,0 +1,33 @@
+﻿# Algorithm is tricky here, because if we would  create a programm in a "usual way", as we used to, we have to try creating lists and have multiple loops to iterate them. It uses a loop to iterate over all the cats and a nested loop to determine the state of each cat after num_rounds rounds. If the state of a cat is 1, then its number (index + 1) is added to a list result. At the end, the result list contains the numbers of cats that will have hats on.
+
+
+Function_cats_with_hats_mk_1(num_cats, num_rounds):
+    cats = [0] * num_cats
+    for i in range(1, num_rounds + 1)
+        for j in range(i-1, num_cats, i):
+            cats[j] = 1 - cats[j]
+    
+    result = []
+    for i in range(num_cats):
+        if cats[i] == 1:
+            result.append(i+1)
+    return result
+
+# But as an obvious thing, this task is about complexity. The outer loop, which runs num_rounds times, takes O(n) time. 
+# The inner loop, which runs n / i times for each iteration of the outer loop, takes O(n) time for a total of O(n^2) time for the inner loop. 
+# So, the overall time complexity is O(n) * O(n^2) = O(n^3), which is not ok.
+# So I've tried to resolve this issue and find a correct solution that can reduce the complexity. 
+# The puzzle states that a cat is wearing a hat if the number of times its state is flipped is odd. 
+# The number of flips is equal to the number of distinct factors of the cat's number (c). To have an odd number of factors, c must be a square number (c = f x f). 
+# The goal is to list all the square numbers within a given range. So in fact we have to simply find an every square numbers from 1 to 100.
+
+function_cats_with_hats_mk_2()
+    store_list = []
+    for_loop i in range from 1 to 11
+        square = i*i
+        append store_list with square
+    return store_list
+
+# result is [1,4,9,16,25,36,49,64,81,100] 
+# time complexity is O(n)
+# space complexity is O(n)
